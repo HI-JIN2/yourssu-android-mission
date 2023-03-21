@@ -7,20 +7,20 @@
     tools:context=".AddFragment">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_nameT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="이름"
+        android:text="@string/name"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_numberT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="전화번호"
+        android:text="@string/phoneNumber"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
         android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nameT" />
 
     <EditText
         android:id="@+id/et_number"
@@ -46,7 +46,7 @@
         android:hint="010-XXXX-XXXX"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_numberT" />
 
     <Button
         android:id="@+id/btn_add"

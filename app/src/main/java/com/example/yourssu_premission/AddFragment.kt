@@ -16,9 +16,8 @@ class AddFragment : Fragment() {
     private var _binding: FragmentAddBinding? = null
     private val binding: FragmentAddBinding
         get() = requireNotNull(_binding) { "FragmentAddBinding" }
-    var name : String =""
-    var phoneNumber : String=""
-
+    var name: String = ""
+    var phoneNumber: String = ""
 
     var db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
@@ -29,34 +28,38 @@ class AddFragment : Fragment() {
     ): View? {
         _binding = FragmentAddBinding.inflate(inflater, container, false)
 
-        binding.etName.addTextChangedListener(object: TextWatcher {
+        binding.etName.addTextChangedListener(object : TextWatcher {
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             //값 변경 시 실행되는 함수
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 //입력값 담기
-                name = binding.etName.text.toString() }
+                name = binding.etName.text.toString()
+            }
+
             override fun afterTextChanged(p0: Editable?) {
             }
         })
 
-        binding.etNumber.addTextChangedListener(object: TextWatcher {
+        binding.etNumber.addTextChangedListener(object : TextWatcher {
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             //값 변경 시 실행되는 함수
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 //입력값 담기
-                phoneNumber = binding.etNumber.text.toString() }
+                phoneNumber = binding.etNumber.text.toString()
+            }
+
             override fun afterTextChanged(p0: Editable?) {
             }
         })
 
-        binding.btnAdd.setOnClickListener(){
-            if(name.isEmpty() || phoneNumber.isEmpty())
+        binding.btnAdd.setOnClickListener() {
+            if (name.isEmpty() || phoneNumber.isEmpty())
                 Toast.makeText(context, "이름과 전화번호를 모두 입력해주세요", Toast.LENGTH_SHORT).show()
-            else{
+            else {
                 val user = hashMapOf(
                     "name" to name,
                     "phoneNumber" to phoneNumber,

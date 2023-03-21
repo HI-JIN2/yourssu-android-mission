@@ -15,27 +15,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        //supportFragmentManager.beginTransaction().add(R.id.fl_con, NaviHomeFragment()).commit()
-
         binding.bnvMain.setOnItemSelectedListener { item ->
             changeFragment(
                 when (item.itemId) {
                     R.id.action_add -> {
-//                        bnv_main.itemIconTintList = ContextCompat.getColorStateList(this, R.color.color_bnv1)
-//                        bnv_main.itemTextColor = ContextCompat.getColorStateList(this, R.color.color_bnv1)
                         AddFragment()
-                        // Respond to navigation item 1 click
                     }
                     R.id.action_list -> {
-                        //bnv_main.itemIconTintList = ContextCompat.getColorStateList(this, R.color.color_bnv2)
-                        //bnv_main.itemTextColor = ContextCompat.getColorStateList(this, R.color.color_bnv2)
                         ListFragment()
-                        // Respond to navigation item 2 click
                     }
                     else -> {
-                   //     bnv_main.itemIconTintList = ContextCompat.getColorStateList(this, R.color.color_bnv1)
-                    //    bnv_main.itemTextColor = ContextCompat.getColorStateList(this, R.color.color_bnv1)
                         AddFragment()
                     }
                 }
