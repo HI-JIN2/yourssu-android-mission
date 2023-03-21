@@ -63,6 +63,7 @@ class AddFragment : Fragment() {
                 val user = hashMapOf(
                     "name" to name,
                     "phoneNumber" to phoneNumber,
+                    "timestamp" to System.currentTimeMillis()
                 )
                 db.collection("telephoneBook")
                     .add(user)

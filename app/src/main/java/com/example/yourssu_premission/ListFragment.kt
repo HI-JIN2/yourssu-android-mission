@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.yourssu_premission.databinding.FragmentListBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 
 class ListFragment : Fragment() {
 
@@ -43,7 +44,7 @@ class ListFragment : Fragment() {
         var telephoneBook: ArrayList<User> = arrayListOf()
 
         init {
-            firestore?.collection("telephoneBook")
+            firestore?.collection("telephoneBook")?.orderBy("timestamp", Query.Direction.DESCENDING)
                 ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                     // ArrayList 비워줌
                     telephoneBook.clear()
